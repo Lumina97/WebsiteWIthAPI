@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Erik Nivala</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/Global.css" />
+  </head>
+
+  <body>
+
+    <div id="ImageDisplayModal">
+        <div class="modalHeader">
+            <div>
+                <button id="modalMainCollectionButton" class="activeBtn" onclick="openMainCollection()"><i class="fa-solid fa-grip"></i></button>
+                <button id="modalFavCollectionButton" onclick="openFavoritesCollection()"><i class="fa-solid fa-star"></i></button>
+                <select id="sort">
+                    <option value="" disabled selected>Sort...</option>       
+                    <option value="sizeAscending">Size A-Z</option>
+                    <option value="sizeDescending">Size Z-A</i> </option>
+                </select>               
+            </div>        
+        </div>
+
+        <div id="modalContentContainer">            
+        </div>
+        <div id="itemProperty">
+        </div>       
+    </div>
+
+   
+    </div>
+    <script src=../JS/Global.js></script>
+    <script src="https://kit.fontawesome.com/88f17612fa.js" crossorigin="anonymous"></script>
+  </body>
+</html>

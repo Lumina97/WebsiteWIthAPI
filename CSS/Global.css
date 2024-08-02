@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap");
+
+:root {
+  --color-orange: #cf7651;
+  --color-turquoise: #2f6568;
+  --color-dark-blue: #162936;
+  --color-green: #329680;
+  --color-blue: #099c95;
+  --color-dark-green: #175b52;
+  --color-white: #fff;
+  --color-gray: #505050;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-dark-blue);
+  background: linear-gradient(
+    to bottom,
+    var(--color-dark-blue) 5%,
+    var(--color-turquoise) 38%,
+    var(--color-orange) 100%
+  );
+  color: #585761;
+  text-shadow: 1px 1px #9494947c;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 18px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+button {
+  background: none;
+  border: solid var(--color-orange) 2px;
+  border-radius: 25px;
+  min-width: 220px;
+  height: 35px;
+  font-size: 16px;
+  color: #585761;
+  text-anchor: middle;
+  scale: 1;
+  transition: 0.15s ease-in-out;
+  margin-bottom: 0.5rem;
+}
+
+button:hover {
+  background-color: var(--color-orange);
+  border: solid var(--color-orange) 2px;
+  border-radius: 25px;
+  color: white;
+}
+
+button:active {
+  scale: 0.95;
+}
+
+select {
+  height: 35px;
+  border-radius: 25px;
+  min-width: 100px;
+  text-align: center;
+  border: 2px solid var(--color-orange);
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-select::after {
+  content: "▼"; /* Custom arrow */
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+#ImageDisplayModal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  top: 5%;
+  left: 5%;
+  width: 90vw;
+  height: 90vh;
+  background: var(--color-white);
+  z-index: 100;
+  border-radius: 0.75rem;
+  padding-bottom: 0.5rem;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  gap: 0.75rem;
+}
+.modalHeader > div:nth-child(1) {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  gap: 1rem;
+}
+
+.modalHeader button {
+  min-width: 4rem;
+}
+
+.modalHeader i {
+  scale: 1;
+  transition: linear 0.15s;
+  align-self: flex-start;
+}
+
+#imageSizes {
+  display: flex;
+  flex-direction: column;
+  max-height: 150px;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  flex: 1;
+  overflow: auto;
+  min-width: 220px;
+}
+
+#modalContentContainer {
+  margin: 0.5rem;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  overflow: auto;
+}
+
+#modalContentContainer::-webkit-scrollbar {
+  width: 12px; /* Adjust width as needed */
+}
+
+#modalContentContainer::-webkit-scrollbar-thumb {
+  background: var(--color-turquoise); /* Scrollbar thumb color */
+  border-radius: 6px;
+}
+
+#modalContentContainer::-webkit-scrollbar-track {
+  background: var(--color-orange); /* Scrollbar track color */
+  border-radius: 6px;
+}
+
+.modalItem {
+  border: 1px solid var(--color-orange);
+  border-radius: 8px;
+  width: fit-content;
+  max-width: 200px;
+  min-width: 200px;
+  min-height: 300px;
+  margin: 1rem;
+  text-align: center;
+  position: relative;
+}
+.modalItem p,
+.modalItem span {
+  font-size: 14px;
+  text-align: left;
+  margin: 0.25rem;
+  max-width: 150px;
+  word-wrap: break-word;
+}
+
+.modalItemButtons {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+.descriptionContainer {
+  display: grid;
+  align-items: start;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  object-fit: cover;
+}
+
+.imageContainer {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  margin-top: 0.25rem;
+}
+
+#itemPreview {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  background-color: white;
+  border: 1px solid var(--color-turquoise);
+  border-radius: 10px;
+  transition: linear 0.15s;
+  margin: auto;
+  max-width: 1024px;
+  width: 80vw;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.modalHeader i:hover {
+  scale: 1.4;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.15rem;
+}
+
+#itemProperty {
+  text-align: center;
+}
+
+@media (max-width: 450px) {
+  #ImageDisplayModal {
+    height: 95vh;
+    top: 1%;
+    border: 1px solid black;
+  }
+}

@@ -3,11 +3,11 @@
   <head>
     <title>Erik Nivala</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../CSS/Global.css" />
+    <link rel="stylesheet" href="/CSS/global.css" />
+    <link rel="stylesheet" href="/CSS/animations.css" />
   </head>
 
   <body>
-
     <div id="ImageDisplayModal">
         <div class="modalHeader">
             <div>
@@ -15,21 +15,27 @@
                 <button id="modalFavCollectionButton" onclick="openFavoritesCollection()"><i class="fa-solid fa-star"></i></button>
                 <select id="sort">
                     <option value="" disabled selected>Sort...</option>       
-                    <option value="sizeAscending">Size A-Z</option>
-                    <option value="sizeDescending">Size Z-A</i> </option>
+                    <option value="A-Z">Name A-Z</option>
+                    <option value="Z-A">Name Z-A</i> </option>
                 </select>               
             </div>        
         </div>
 
-        <div id="modalContentContainer">            
+        <div id="modalContentContainer">      
+          <div class="loaderContainer">
+            <div class="loader" id="loader"> </div>
+        </div>      
         </div>
         <div id="itemProperty">
         </div>       
     </div>
 
    
-    </div>
-    <script src=../JS/Global.js></script>
+    <script src=/JS/global.js></script>
+    <script src=/JS/cssVariablesManager.js></script>
+    <script src=/JS/collectionManager.js></script>
+    <script src=/JS/propertyTracker.js></script>
+    <script src=/JS/itemSorting.js></script>
     <script src="https://kit.fontawesome.com/88f17612fa.js" crossorigin="anonymous"></script>
   </body>
 </html>

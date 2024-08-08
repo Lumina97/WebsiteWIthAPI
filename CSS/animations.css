@@ -1,0 +1,87 @@
+@keyframes moveToFavoriteButton {
+  0% {
+    left: var(--modalItemInitialPositionX);
+    top: var(--modalItemInitialPositionY);
+    position: fixed;
+    z-index: 100;
+    background-color: white;
+    scale: 1;
+    opacity: 100%;
+  }
+  50% {
+    opacity: 100%;
+  }
+  100% {
+    left: var(--favPositionX);
+    top: var(--favPositionY);
+    background-color: white;
+    z-index: 100;
+    position: fixed;
+    scale: 0;
+    opacity: 10%;
+  }
+}
+
+@keyframes moveToMainButton {
+  0% {
+    left: var(--modalItemInitialPositionX);
+    top: var(--modalItemInitialPositionY);
+    position: fixed;
+    z-index: 100;
+    background-color: white;
+    scale: 1;
+    opacity: 100%;
+  }
+  50% {
+    opacity: 100%;
+  }
+  100% {
+    left: var(--collectionPositionX);
+    top: var(--collectionPositionY);
+    background-color: white;
+    z-index: 100;
+    position: fixed;
+    scale: 0;
+    opacity: 10%;
+  }
+}
+
+@keyframes buttonWiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(25deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-25deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.addToFavoriteAnimation {
+  animation-name: moveToFavoriteButton;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+
+.addToMainCollectionAnimation {
+  animation-name: moveToMainButton;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+
+.buttonWiggleAnimation {
+  animation-name: buttonWiggle;
+  animation-duration: 0.25s;
+  animation-delay: 0.7s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
